@@ -1,25 +1,23 @@
 //
-//  IOManager.hpp
+//  GenomeIndexer.hpp
 //  SuperBBmap
 //
 //  Created by Josip Maric on 12/12/15.
 //  Copyright © 2015 Josip Maric. All rights reserved.
 //
 
-#ifndef IOManager_hpp
-#define IOManager_hpp
+#ifndef GenomeIndexer_hpp
+#define GenomeIndexer_hpp
 
 #include <stdio.h>
 #include <string>
 #include <iostream>
 
-#include "Utils.hpp"
-
 using namespace std;
 
-class IOManager {
+class GenomeIndexer {
 public:
     static string* extractGenomeFromFile(string genome_file);
 };
 
-#endif /* IOManager_hpp */
+#endif /* GenomeIndexer_hpp */

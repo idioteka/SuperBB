@@ -13,7 +13,7 @@ string* IOManager::extractGenomeFromFile(string genome_file) {
     string* whole_genome = new string();
     FILE *inGenome = fopen(genome_file.c_str(), "r");
     if (inGenome == NULL) {
-        cout << "[SuperBB]: Reference file does not exist: " << genome_file << endl;
+        print("Reference file does not exist: " + genome_file);
         exit(-1);
     }
     char buff[256];
