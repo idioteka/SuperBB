@@ -6,10 +6,13 @@
 //  Copyright © 2015 Josip Maric. All rights reserved.
 //
 
-#include <iostream>
+#include "IOManager.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    std::string genome_filename = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/InputTestsStorage/test_genome.fa";
+    std::string* whole_genome = IOManager::extractGenomeFromFile(genome_filename);
+    std::cout << *whole_genome << std::endl;
+    
     return 0;
 }

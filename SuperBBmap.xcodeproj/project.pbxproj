@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389A1C1C6810000C715A /* IOManager.cpp */; };
 		AC30D3C71C0CD77F00F48FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC30D3C61C0CD77F00F48FB9 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC2D389A1C1C6810000C715A /* IOManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IOManager.cpp; path = IOManager/IOManager.cpp; sourceTree = "<group>"; };
+		AC2D389B1C1C6810000C715A /* IOManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IOManager.hpp; path = IOManager/IOManager.hpp; sourceTree = "<group>"; };
+		AC2D389E1C1CBA6B000C715A /* test_genome.fa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_genome.fa; path = SuperBBmap/InputTestsStorage/test_genome.fa; sourceTree = "<group>"; };
 		AC30D3C31C0CD77F00F48FB9 /* SuperBBmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SuperBBmap; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC30D3C61C0CD77F00F48FB9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,9 +42,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC2D38981C1C65A6000C715A /* GenomeIndexer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GenomeIndexer;
+			sourceTree = "<group>";
+		};
+		AC2D38991C1C67E7000C715A /* IOManager */ = {
+			isa = PBXGroup;
+			children = (
+				AC2D389A1C1C6810000C715A /* IOManager.cpp */,
+				AC2D389B1C1C6810000C715A /* IOManager.hpp */,
+			);
+			name = IOManager;
+			sourceTree = "<group>";
+		};
+		AC2D389D1C1C6FCB000C715A /* InputTestsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AC2D389E1C1CBA6B000C715A /* test_genome.fa */,
+			);
+			name = InputTestsStorage;
+			sourceTree = "<group>";
+		};
 		AC30D3BA1C0CD77F00F48FB9 = {
 			isa = PBXGroup;
 			children = (
+				AC2D389D1C1C6FCB000C715A /* InputTestsStorage */,
 				AC30D3C51C0CD77F00F48FB9 /* SuperBBmap */,
 				AC30D3C41C0CD77F00F48FB9 /* Products */,
 			);
@@ -57,6 +86,8 @@
 		AC30D3C51C0CD77F00F48FB9 /* SuperBBmap */ = {
 			isa = PBXGroup;
 			children = (
+				AC2D38991C1C67E7000C715A /* IOManager */,
+				AC2D38981C1C65A6000C715A /* GenomeIndexer */,
 				AC30D3C61C0CD77F00F48FB9 /* main.cpp */,
 			);
 			path = SuperBBmap;
@@ -119,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC30D3C71C0CD77F00F48FB9 /* main.cpp in Sources */,
+				AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +269,7 @@
 				AC30D3CC1C0CD77F00F48FB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
