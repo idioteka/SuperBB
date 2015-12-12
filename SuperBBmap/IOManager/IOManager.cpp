@@ -8,12 +8,12 @@
 
 #include "IOManager.hpp"
 
-string* IOManager::extractGenomeFromFile(string genome_file) {
+string* IOManager::extractGenomeFromFile(string genomeFile) {
     
-    string* whole_genome = new string();
-    FILE *inGenome = fopen(genome_file.c_str(), "r");
+    string* wholeGenome = new string();
+    FILE *inGenome = fopen(genomeFile.c_str(), "r");
     if (inGenome == NULL) {
-        print("Reference file does not exist: " + genome_file);
+        print("Reference file does not exist: " + genomeFile);
         exit(-1);
     }
     char buff[256];
@@ -23,8 +23,8 @@ string* IOManager::extractGenomeFromFile(string genome_file) {
         if (buff[0] != '>') {
             string tmp = buff;
             tmp.resize(tmp.size() - 1);  // remove endl
-            *whole_genome += tmp;
+            *wholeGenome += tmp;
         }
     }
-    return whole_genome;
+    return wholeGenome;
 }

@@ -19,7 +19,7 @@ using namespace std;
 
 class IOManager {
 public:
-    static string* extractGenomeFromFile(string genome_file);
+    static string* extractGenomeFromFile(string genomeFile);
 };
 
 #endif /* IOManager_hpp */

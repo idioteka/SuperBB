@@ -20,4 +20,6 @@ public:
     static string* extractGenomeFromFile(string genome_file);
 };
 
+
+
 #endif /* GenomeIndexer_hpp */

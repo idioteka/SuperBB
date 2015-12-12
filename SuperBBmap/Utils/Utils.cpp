@@ -17,3 +17,20 @@ static void debugPrint(string content) {
         print(content);
     }
 }
+
+int baseToCode(char base) {
+    char lowerBase = tolower(base);
+    
+    switch (lowerBase) {
+        case 'a':
+            return 0;
+        case 'c':
+            return 1;
+        case 'g':
+            return 2;
+        case 't':
+            return 3;
+        default:
+            return -1;
+    }
+}

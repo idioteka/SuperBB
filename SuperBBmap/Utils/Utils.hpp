@@ -18,5 +18,8 @@ using namespace std;
 static bool debug = true;
 
 static void print(string content);
+static void debugPrint(string content);
+
+static int baseToCode(char base);
 
 #endif /* Utils_hpp */
