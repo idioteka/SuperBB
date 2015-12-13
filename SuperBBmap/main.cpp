@@ -15,7 +15,9 @@ int main(int argc, const char * argv[]) {
     string* wholeGenome = IOManager::extractGenomeFromFile(genomeFilename);
     print(*wholeGenome);
     
-    GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
+//    GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
+    
+    GenomeIndex* index = IOManager::readIndexFromFile();
     
     delete wholeGenome;
     
