@@ -10,11 +10,23 @@
 #define Config_hpp
 
 #include <stdio.h>
+#include <string>
+#include <iostream>
+#include <cmath>
+#include <pthread.h>
+#include <sys/time.h>
+#include <sys/stat.h>
+
+using namespace std;
 
 class Config {
 public:
     static Config* instance();
     long keylen;
+    string indexId;
+    string rootDir;
+    string inRootDir;
+    string outRootDir;
 private:
     Config();
     Config(Config const&);

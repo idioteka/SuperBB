@@ -9,16 +9,14 @@
 #ifndef GenomeIndex_hpp
 #define GenomeIndex_hpp
 
-#include <stdio.h>
-#include <string>
-#include <iostream>
-
 #include "Utils.hpp"
 
 using namespace std;
 
 class GenomeIndex {
 public:
+    static const string sizesArrayName;
+    static const string sitesArrayName;
     long* sizes;
     long sitesLength;
     long* sites;
@@ -26,6 +24,10 @@ public:
         sizes = _sizes;
         sitesLength = _sitesLength;
         sites = _sites;
+    }
+    ~GenomeIndex() {
+        delete sizes;
+        delete sites;
     }
 };
 

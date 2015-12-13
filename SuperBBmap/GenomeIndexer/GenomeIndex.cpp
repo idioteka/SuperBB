@@ -7,3 +7,6 @@
 //
 
 #include "GenomeIndex.hpp"
+
+const string GenomeIndex::sizesArrayName = "sizes";
+const string GenomeIndex::sitesArrayName = "sites";

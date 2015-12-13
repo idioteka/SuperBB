@@ -9,17 +9,17 @@
 #ifndef IOManager_hpp
 #define IOManager_hpp
 
-#include <stdio.h>
-#include <string>
-#include <iostream>
-
 #include "Utils.hpp"
+#include "GenomeIndex.hpp"
 
 using namespace std;
 
 class IOManager {
 public:
     static string* extractGenomeFromFile(string genomeFile);
+    static void writeIndexToFile(GenomeIndex* index);
+private:
+    static void writeLongArray(long* array, long length, string location, string name);
 };
 
 #endif /* IOManager_hpp */

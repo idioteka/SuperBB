@@ -36,6 +36,6 @@ int baseToCode(char base) {
 }
 
 int keyspace() {
-    int keylen = Config::instance()->keylen;
+    long keylen = Config::instance()->keylen;
     return pow(2, 2*keylen);
 }

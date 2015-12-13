@@ -11,13 +11,19 @@
 
 int main(int argc, const char * argv[]) {
     
-    string genomeFilename = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/InputTestsStorage/test_genome.fa";
+    string genomeFilename = Config::instance()->inRootDir + "test_genome.fa";
     string* wholeGenome = IOManager::extractGenomeFromFile(genomeFilename);
     print(*wholeGenome);
     
     GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
     
+    delete wholeGenome;
+    
     print(to_string(index->sitesLength));
+    
+    IOManager::writeIndexToFile(index);
+    
+    delete index;
     
     return 0;
 }

@@ -19,4 +19,8 @@ Config* Config::instance() {
 
 Config::Config() {
     keylen = 13;
+    indexId = "0";
+    rootDir = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/";
+    inRootDir = rootDir + "InputTestsStorage/";
+    outRootDir = rootDir + "OutputTestStorage/";
 }

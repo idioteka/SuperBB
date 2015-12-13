@@ -97,8 +97,9 @@
 				AC2D38A61C1CEE99000C715A /* Config.cpp */,
 				AC2D38A71C1CEE99000C715A /* Config.hpp */,
 				AC2D38A21C1CE1C2000C715A /* Utils */,
-				AC2D389D1C1C6FCB000C715A /* InputTestsStorage */,
 				AC30D3C51C0CD77F00F48FB9 /* SuperBBmap */,
+				ACD905E11C1D995700C00D5A /* OutputTestStorage */,
+				AC2D389D1C1C6FCB000C715A /* InputTestsStorage */,
 				AC30D3C41C0CD77F00F48FB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +120,13 @@
 				AC30D3C61C0CD77F00F48FB9 /* main.cpp */,
 			);
 			path = SuperBBmap;
+			sourceTree = "<group>";
+		};
+		ACD905E11C1D995700C00D5A /* OutputTestStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = OutputTestStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
