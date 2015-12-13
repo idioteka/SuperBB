@@ -22,4 +22,10 @@ int baseToCode(char base);
 
 int keyspace();
 
+vector<string> &split(const string &s, char delim, vector<string> &elems);
+vector<string> split(const string &s, char delim);
+
+string matchStringToCigarString(string matchString);
+string cigarStringToMatchString(string cigarString);
+    
 #endif /* Utils_hpp */

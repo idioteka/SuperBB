@@ -16,6 +16,9 @@
 #include <pthread.h>
 #include <sys/time.h>
 #include <sys/stat.h>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 

@@ -11,8 +11,11 @@
 		AC2D38A11C1CBD53000C715A /* GenomeIndexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389F1C1CBD53000C715A /* GenomeIndexer.cpp */; };
 		AC2D38A51C1CE1F4000C715A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A31C1CE1F4000C715A /* Utils.cpp */; };
 		AC2D38A81C1CEE99000C715A /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A61C1CEE99000C715A /* Config.cpp */; };
-		AC2D38AB1C1CF5D9000C715A /* GenomeIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A91C1CF5D9000C715A /* GenomeIndex.cpp */; };
 		AC30D3C71C0CD77F00F48FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC30D3C61C0CD77F00F48FB9 /* main.cpp */; };
+		AC49965C1C1DEC1400575DD5 /* GenomeIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC49965A1C1DEC1400575DD5 /* GenomeIndex.cpp */; };
+		AC49965F1C1DEC9500575DD5 /* Read.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC49965D1C1DEC9500575DD5 /* Read.cpp */; };
+		AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC4996601C1DEE5700575DD5 /* CorrectAlignment.cpp */; };
+		AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC4996631C1DEFB400575DD5 /* Alignment.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,10 +40,16 @@
 		AC2D38A41C1CE1F4000C715A /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = SuperBBmap/Utils/Utils.hpp; sourceTree = "<group>"; };
 		AC2D38A61C1CEE99000C715A /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Config.cpp; path = SuperBBmap/Config.cpp; sourceTree = "<group>"; };
 		AC2D38A71C1CEE99000C715A /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Config.hpp; path = SuperBBmap/Config.hpp; sourceTree = "<group>"; };
-		AC2D38A91C1CF5D9000C715A /* GenomeIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenomeIndex.cpp; path = GenomeIndexer/GenomeIndex.cpp; sourceTree = "<group>"; };
-		AC2D38AA1C1CF5D9000C715A /* GenomeIndex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GenomeIndex.hpp; path = GenomeIndexer/GenomeIndex.hpp; sourceTree = "<group>"; };
 		AC30D3C31C0CD77F00F48FB9 /* SuperBBmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SuperBBmap; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC30D3C61C0CD77F00F48FB9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AC49965A1C1DEC1400575DD5 /* GenomeIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenomeIndex.cpp; path = Models/GenomeIndex.cpp; sourceTree = "<group>"; };
+		AC49965B1C1DEC1400575DD5 /* GenomeIndex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GenomeIndex.hpp; path = Models/GenomeIndex.hpp; sourceTree = "<group>"; };
+		AC49965D1C1DEC9500575DD5 /* Read.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Read.cpp; path = Models/Read.cpp; sourceTree = "<group>"; };
+		AC49965E1C1DEC9500575DD5 /* Read.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Read.hpp; path = Models/Read.hpp; sourceTree = "<group>"; };
+		AC4996601C1DEE5700575DD5 /* CorrectAlignment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CorrectAlignment.cpp; path = Models/CorrectAlignment.cpp; sourceTree = "<group>"; };
+		AC4996611C1DEE5700575DD5 /* CorrectAlignment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CorrectAlignment.hpp; path = Models/CorrectAlignment.hpp; sourceTree = "<group>"; };
+		AC4996631C1DEFB400575DD5 /* Alignment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Alignment.cpp; path = Models/Alignment.cpp; sourceTree = "<group>"; };
+		AC4996641C1DEFB400575DD5 /* Alignment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Alignment.hpp; path = Models/Alignment.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +68,6 @@
 			children = (
 				AC2D389F1C1CBD53000C715A /* GenomeIndexer.cpp */,
 				AC2D38A01C1CBD53000C715A /* GenomeIndexer.hpp */,
-				AC2D38A91C1CF5D9000C715A /* GenomeIndex.cpp */,
-				AC2D38AA1C1CF5D9000C715A /* GenomeIndex.hpp */,
 			);
 			name = GenomeIndexer;
 			sourceTree = "<group>";
@@ -115,11 +122,27 @@
 		AC30D3C51C0CD77F00F48FB9 /* SuperBBmap */ = {
 			isa = PBXGroup;
 			children = (
+				AC4996591C1DEBC300575DD5 /* Models */,
 				AC2D38991C1C67E7000C715A /* IOManager */,
 				AC2D38981C1C65A6000C715A /* GenomeIndexer */,
 				AC30D3C61C0CD77F00F48FB9 /* main.cpp */,
 			);
 			path = SuperBBmap;
+			sourceTree = "<group>";
+		};
+		AC4996591C1DEBC300575DD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC49965A1C1DEC1400575DD5 /* GenomeIndex.cpp */,
+				AC49965B1C1DEC1400575DD5 /* GenomeIndex.hpp */,
+				AC49965D1C1DEC9500575DD5 /* Read.cpp */,
+				AC49965E1C1DEC9500575DD5 /* Read.hpp */,
+				AC4996601C1DEE5700575DD5 /* CorrectAlignment.cpp */,
+				AC4996611C1DEE5700575DD5 /* CorrectAlignment.hpp */,
+				AC4996631C1DEFB400575DD5 /* Alignment.cpp */,
+				AC4996641C1DEFB400575DD5 /* Alignment.hpp */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		ACD905E11C1D995700C00D5A /* OutputTestStorage */ = {
@@ -190,7 +213,10 @@
 				AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */,
 				AC2D38A81C1CEE99000C715A /* Config.cpp in Sources */,
 				AC2D38A51C1CE1F4000C715A /* Utils.cpp in Sources */,
-				AC2D38AB1C1CF5D9000C715A /* GenomeIndex.cpp in Sources */,
+				AC49965C1C1DEC1400575DD5 /* GenomeIndex.cpp in Sources */,
+				AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */,
+				AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */,
+				AC49965F1C1DEC9500575DD5 /* Read.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
