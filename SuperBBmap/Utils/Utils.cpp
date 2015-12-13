@@ -8,11 +8,11 @@
 
 #include "Utils.hpp"
 
-static void print(string content) {
-    cout << "[SuperBB]: " << endl;
+void print(string content) {
+    cout << "[SuperBB]: " << content << endl;
 }
 
-static void debugPrint(string content) {
+void debugPrint(string content) {
     if (debug) {
         print(content);
     }
@@ -33,4 +33,9 @@ int baseToCode(char base) {
         default:
             return -1;
     }
+}
+
+int keyspace() {
+    int keylen = Config::instance()->keylen;
+    return pow(2, 2*keylen);
 }

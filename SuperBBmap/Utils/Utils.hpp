@@ -12,14 +12,19 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <cmath>
+
+#include "Config.hpp"
 
 using namespace std;
 
 static bool debug = true;
 
-static void print(string content);
-static void debugPrint(string content);
+void print(string content);
+void debugPrint(string content);
 
-static int baseToCode(char base);
+int baseToCode(char base);
+
+int keyspace();
 
 #endif /* Utils_hpp */

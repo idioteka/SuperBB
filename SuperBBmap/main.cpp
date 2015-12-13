@@ -7,12 +7,17 @@
 //
 
 #include "IOManager.hpp"
+#include "GenomeIndexer.hpp"
 
 int main(int argc, const char * argv[]) {
     
-    std::string genome_filename = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/InputTestsStorage/test_genome.fa";
-    std::string* whole_genome = IOManager::extractGenomeFromFile(genome_filename);
-    std::cout << *whole_genome << std::endl;
+    string genomeFilename = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/InputTestsStorage/test_genome.fa";
+    string* wholeGenome = IOManager::extractGenomeFromFile(genomeFilename);
+    print(*wholeGenome);
+    
+    GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
+    
+    print(to_string(index->sitesLength));
     
     return 0;
 }
