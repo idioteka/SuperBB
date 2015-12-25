@@ -18,10 +18,13 @@ static bool debug = true;
 void print(string content);
 void debugPrint(string content);
 
+// converting nucleotide base to two bit code
 int baseToCode(char base);
 
+// number of different keys with current keylen
 int keyspace();
 
+// string split functions
 vector<string> &split(const string &s, char delim, vector<string> &elems);
 vector<string> split(const string &s, char delim);
 

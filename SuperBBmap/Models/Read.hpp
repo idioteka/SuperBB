@@ -12,6 +12,7 @@
 #include "Utils.hpp"
 #include "CorrectAlignment.hpp"
 
+// represents one read with possible correct alignment
 class Read {
 public:
     int id;

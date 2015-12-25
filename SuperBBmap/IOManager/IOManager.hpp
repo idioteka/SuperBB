@@ -16,15 +16,31 @@
 
 using namespace std;
 
+// class that handles I/O operations of genome, reads, results and statistics
 class IOManager {
 public:
+    // GENOME INDEX METHODS
+    // reads genome string from file
     static string* extractGenomeFromFile(string genomeFile);
+    // writes created genome index to file
     static void writeIndexToFile(GenomeIndex* index);
+    // reads created genome index from file
     static GenomeIndex* readIndexFromFile();
+    
+    // READS METHODS
+    // reads reads from file in BB format
     static vector<Read>* readReadsFromBBFormat(string filename);
+    // reads reads from file in Fasta formatx
+    static vector<Read>* readReadsFromFastaFormat(string filename);
+    static void writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile);
+    static void writeResultsInSamFormat(vector<Alignment> alignments, string outfile);
 private:
+    // GENOME INDEX METHODS
     static void writeLongArray(long* array, long length, string location, string name);
-    static long* readArray(string filename, string name, long* arrayLength);
+    static long* readLongArray(string filename, string name, long* arrayLength);
+    
+    // READS METHODS
+    // parses gap array
     static vector<long> gapArrayFromString(string str);
 };
 

@@ -12,13 +12,16 @@
 #include "Utils.hpp"
 #include "Read.hpp"
 
+// one possible alignment of one read
 class Alignment {
 public:
     Read* read;
     long start;
     long stop;
     bool strand;
+    // score of possible alignment
     int score;
+    // match string representation of possible alignment
     string matchString;
     vector<long> gapArray;
     Alignment(Read* _read, long _start, long _stop, bool _strand, int _score, string _matchString, vector<long> _gapArray) {

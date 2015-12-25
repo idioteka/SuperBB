@@ -11,11 +11,16 @@
 
 #include "Utils.hpp"
 
+// correct alignment for one read
 class CorrectAlignment {
 public:
+    // start of correct alignment of read
     long start;
+    // stop of correct alignment of read
     long stop;
+    // cigar string representation of correct alignment
     string cigarString;
+    // contains positions of introns
     vector<long> gapArray;
     CorrectAlignment(long _start, long _stop, string _cigarString, vector<long> _gapArray) {
         start = _start;

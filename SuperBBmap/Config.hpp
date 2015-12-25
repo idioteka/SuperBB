@@ -22,13 +22,19 @@
 
 using namespace std;
 
+// Class containing config data of current running instance of program
 class Config {
 public:
     static Config* instance();
+    // length of key
     long keylen;
+    // id of genome index
     string indexId;
-    string rootDir;
+    // root directory path where input and output data is stored
+    string rootDirPath;
+    // directory where input data is stored
     string inRootDir;
+    // directory where output data is stored
     string outRootDir;
 private:
     Config();

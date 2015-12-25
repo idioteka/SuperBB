@@ -8,6 +8,9 @@
 
 #include "IOManager.hpp"
 
+
+// #### GENOME INDEX METHODS ####
+
 string* IOManager::extractGenomeFromFile(string genomeFile) {
     
     string* wholeGenome = new string();
@@ -65,17 +68,17 @@ GenomeIndex* IOManager::readIndexFromFile() {
     
     string sizesLocation = Config::instance()->inRootDir + "/" + GenomeIndex::sizesArrayName + Config::instance()->indexId;
     long sizesLength;
-    long *sizes = readArray(sizesLocation, GenomeIndex::sizesArrayName, &sizesLength);
+    long *sizes = readLongArray(sizesLocation, GenomeIndex::sizesArrayName, &sizesLength);
     
     string sitesLocation = Config::instance()->inRootDir + "/" + GenomeIndex::sitesArrayName + Config::instance()->indexId;
     long sitesLength;
-    long *sites = readArray(sitesLocation, GenomeIndex::sitesArrayName, &sitesLength);
+    long *sites = readLongArray(sitesLocation, GenomeIndex::sitesArrayName, &sitesLength);
     
     GenomeIndex* index = new GenomeIndex(sizes, sitesLength, sites);
     return index;
 }
 
-long* IOManager::readArray(string filename, string name, long* arrayLength) {
+long* IOManager::readLongArray(string filename, string name, long* arrayLength) {
     timeval t1, t2;
     gettimeofday(&t1, NULL);
     long startday = t1.tv_sec;
@@ -119,6 +122,9 @@ long* IOManager::readArray(string filename, string name, long* arrayLength) {
     return buffer;
 }
 
+
+// #### READS METHODS ####
+
 vector<Read>* IOManager::readReadsFromBBFormat(string filename) {
     ifstream ifs(filename.c_str());
     vector<Read>* reads = new vector<Read>();
@@ -145,7 +151,7 @@ vector<Read>* IOManager::readReadsFromBBFormat(string filename) {
     return reads;
 }
 
-vector<long> gapArrayFromString(string str) {
+vector<long> IOManager::gapArrayFromString(string str) {
     vector<long> gapArray;
     char delimiterMain = ' ';
     char delimiterSecondary = '-';
@@ -166,7 +172,7 @@ vector<long> gapArrayFromString(string str) {
     return gapArray;
 }
 
-vector<Read>* readReadsFromFastaFormat(string filename) {
+vector<Read>* IOManager::readReadsFromFastaFormat(string filename) {
     vector<Read>* reads = new vector<Read>();
     ifstream ifs(filename.c_str());
     if(!ifs) {
@@ -185,7 +191,7 @@ vector<Read>* readReadsFromFastaFormat(string filename) {
     return reads;
 }
 
-void writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile) {
+void IOManager::writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile) {
     ofstream out(outfile.c_str());
     for(unsigned int i = 0; i < alignments.size(); i++) {
         Alignment alignment = alignments[i];
@@ -199,7 +205,7 @@ void writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile) {
             out << correctAlignment->stop << "-";
             out << (correctAlignment->stop - correctAlignment->start) << endl;
         } else {
-            cout << endl;
+            out << endl;
         }
         
         out << alignment.start << "-";
@@ -220,7 +226,7 @@ void writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile) {
     out.close();
 }
 
-void writeResultsInSamFormat(vector<Alignment> alignments, string outfile) {
+void IOManager::writeResultsInSamFormat(vector<Alignment> alignments, string outfile) {
     ofstream out(outfile.c_str());
     for(unsigned int i = 0; i < alignments.size(); i++) {
         Alignment alignment = alignments[i];
