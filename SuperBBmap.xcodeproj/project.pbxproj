@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC01408A1C2DE5D40010D0E3 /* Heap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC0140881C2DE5D40010D0E3 /* Heap.cpp */; };
 		AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389A1C1C6810000C715A /* IOManager.cpp */; };
 		AC2D38A11C1CBD53000C715A /* GenomeIndexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389F1C1CBD53000C715A /* GenomeIndexer.cpp */; };
 		AC2D38A51C1CE1F4000C715A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A31C1CE1F4000C715A /* Utils.cpp */; };
@@ -31,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC0140881C2DE5D40010D0E3 /* Heap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Heap.cpp; path = Models/Heap.cpp; sourceTree = "<group>"; };
+		AC0140891C2DE5D40010D0E3 /* Heap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Heap.hpp; path = Models/Heap.hpp; sourceTree = "<group>"; };
 		AC2D389A1C1C6810000C715A /* IOManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IOManager.cpp; path = IOManager/IOManager.cpp; sourceTree = "<group>"; };
 		AC2D389B1C1C6810000C715A /* IOManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IOManager.hpp; path = IOManager/IOManager.hpp; sourceTree = "<group>"; };
 		AC2D389E1C1CBA6B000C715A /* test_genome.fa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_genome.fa; path = SuperBBmap/InputTestsStorage/test_genome.fa; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				AC4996611C1DEE5700575DD5 /* CorrectAlignment.hpp */,
 				AC4996631C1DEFB400575DD5 /* Alignment.cpp */,
 				AC4996641C1DEFB400575DD5 /* Alignment.hpp */,
+				AC0140881C2DE5D40010D0E3 /* Heap.cpp */,
+				AC0140891C2DE5D40010D0E3 /* Heap.hpp */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */,
 				AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */,
 				AC49965F1C1DEC9500575DD5 /* Read.cpp in Sources */,
+				AC01408A1C2DE5D40010D0E3 /* Heap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
