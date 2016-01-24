@@ -36,6 +36,11 @@ public:
     string inRootDir;
     // directory where output data is stored
     string outRootDir;
+    
+    long desiredKeysNumber;
+    long minDesiredKeysNumber;
+    double minKeyDensity;
+    double maxKeyDensity;
 private:
     Config();
     Config(Config const&);

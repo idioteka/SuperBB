@@ -79,3 +79,16 @@ string matchStringToCigarString(string matchString) {
     compressed.push_back(current);
     return compressed;
 }
+
+int keyFromKmer(string *genome, long start, long stop) {
+    int key = 0;
+    for(long i = start; i < stop; i++) {
+        char base = (*genome)[i];
+        int code = baseToCode(base);
+        if(code < 0) {
+            return -1;
+        }
+        key = ((key<<2) | code);
+    }
+    return key;
+}

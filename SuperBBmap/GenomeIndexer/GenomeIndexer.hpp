@@ -24,7 +24,6 @@ private:
     static long* createSites(string* wholeGenome, long* sizes, long sum);
     static void* countKeys(void *threadid);
     static void* fillSites(void *threadid);
-    static int keyFromKmer(string *wholeGenome, long start, long stop);
 };
 
 #endif /* GenomeIndexer_hpp */

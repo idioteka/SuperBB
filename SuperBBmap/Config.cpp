@@ -23,4 +23,9 @@ Config::Config() {
     rootDirPath = "/Users/josipmaric/Projects/SuperBB/SuperBBmap/";
     inRootDir = rootDirPath + "InputTestsStorage/";
     outRootDir = rootDirPath + "OutputTestStorage/";
+    
+    desiredKeysNumber = 63;
+    minDesiredKeysNumber = 2;
+    minKeyDensity = 2.8;
+    maxKeyDensity = 3.5;
 }

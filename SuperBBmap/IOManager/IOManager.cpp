@@ -125,9 +125,9 @@ long* IOManager::readLongArray(string filename, string name, long* arrayLength) 
 
 // #### READS METHODS ####
 
-vector<Read>* IOManager::readReadsFromBBFormat(string filename) {
+vector<Read*>* IOManager::readReadsFromBBFormat(string filename) {
     ifstream ifs(filename.c_str());
-    vector<Read>* reads = new vector<Read>();
+    vector<Read*>* reads = new vector<Read*>();
     if(!ifs) {
         print("File" + filename + " does not exist");
         exit(-1);
@@ -135,8 +135,8 @@ vector<Read>* IOManager::readReadsFromBBFormat(string filename) {
     string line;
     int br = 0;
     while(getline(ifs, line)) {
+        print(line);
         vector<string> lines = split(line, '\t');
-        string readId = to_string(br);
         string name = lines[0];
         long start = atol(lines[1].c_str());
         long stop = atol(lines[2].c_str());
@@ -144,7 +144,7 @@ vector<Read>* IOManager::readReadsFromBBFormat(string filename) {
         vector<long> gapArray = gapArrayFromString(lines[4]);
         string readContent = lines[5];
         CorrectAlignment* correctAlignment = new CorrectAlignment(start, stop, cigarString, gapArray);
-        Read read = Read(br, readContent, name, correctAlignment);
+        Read* read = new Read(br, readContent, name, correctAlignment);
         reads->push_back(read);
         br++;
     }
@@ -172,8 +172,8 @@ vector<long> IOManager::gapArrayFromString(string str) {
     return gapArray;
 }
 
-vector<Read>* IOManager::readReadsFromFastaFormat(string filename) {
-    vector<Read>* reads = new vector<Read>();
+vector<Read*>* IOManager::readReadsFromFastaFormat(string filename) {
+    vector<Read*>* reads = new vector<Read*>();
     ifstream ifs(filename.c_str());
     if(!ifs) {
         print("File" + filename + " does not exist");
@@ -184,14 +184,14 @@ vector<Read>* IOManager::readReadsFromFastaFormat(string filename) {
     int br = 0;
     while(getline(ifs, nameLine)) {
         getline(ifs, contentLine);
-        Read read = Read(br, contentLine, nameLine, NULL);
+        Read* read = new Read(br, contentLine, nameLine, NULL);
         reads->push_back(read);
         br++;
     }
     return reads;
 }
 
-void IOManager::writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile) {
+void IOManager::writeAlignmentsInBBFormat(vector<Alignment> alignments, string outfile) {
     ofstream out(outfile.c_str());
     for(unsigned int i = 0; i < alignments.size(); i++) {
         Alignment alignment = alignments[i];

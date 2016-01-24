@@ -29,10 +29,10 @@ public:
     
     // READS METHODS
     // reads reads from file in BB format
-    static vector<Read>* readReadsFromBBFormat(string filename);
+    static vector<Read*>* readReadsFromBBFormat(string filename);
     // reads reads from file in Fasta formatx
-    static vector<Read>* readReadsFromFastaFormat(string filename);
-    static void writeAlignmentsInBBOFormat(vector<Alignment> alignments, string outfile);
+    static vector<Read*>* readReadsFromFastaFormat(string filename);
+    static void writeAlignmentsInBBFormat(vector<Alignment> alignments, string outfile);
     static void writeResultsInSamFormat(vector<Alignment> alignments, string outfile);
 private:
     // GENOME INDEX METHODS

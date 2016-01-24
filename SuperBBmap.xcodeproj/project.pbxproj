@@ -10,13 +10,13 @@
 		AC01408A1C2DE5D40010D0E3 /* Heap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC0140881C2DE5D40010D0E3 /* Heap.cpp */; };
 		AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389A1C1C6810000C715A /* IOManager.cpp */; };
 		AC2D38A11C1CBD53000C715A /* GenomeIndexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D389F1C1CBD53000C715A /* GenomeIndexer.cpp */; };
-		AC2D38A51C1CE1F4000C715A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A31C1CE1F4000C715A /* Utils.cpp */; };
 		AC2D38A81C1CEE99000C715A /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC2D38A61C1CEE99000C715A /* Config.cpp */; };
 		AC30D3C71C0CD77F00F48FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC30D3C61C0CD77F00F48FB9 /* main.cpp */; };
 		AC49965C1C1DEC1400575DD5 /* GenomeIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC49965A1C1DEC1400575DD5 /* GenomeIndex.cpp */; };
 		AC49965F1C1DEC9500575DD5 /* Read.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC49965D1C1DEC9500575DD5 /* Read.cpp */; };
 		AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC4996601C1DEE5700575DD5 /* CorrectAlignment.cpp */; };
 		AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC4996631C1DEFB400575DD5 /* Alignment.cpp */; };
+		AC93E3661C5570F30096AC41 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC93E3641C5570F30096AC41 /* Utils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,8 +39,6 @@
 		AC2D389E1C1CBA6B000C715A /* test_genome.fa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_genome.fa; path = SuperBBmap/InputTestsStorage/test_genome.fa; sourceTree = "<group>"; };
 		AC2D389F1C1CBD53000C715A /* GenomeIndexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenomeIndexer.cpp; path = GenomeIndexer/GenomeIndexer.cpp; sourceTree = "<group>"; };
 		AC2D38A01C1CBD53000C715A /* GenomeIndexer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GenomeIndexer.hpp; path = GenomeIndexer/GenomeIndexer.hpp; sourceTree = "<group>"; };
-		AC2D38A31C1CE1F4000C715A /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = SuperBBmap/Utils/Utils.cpp; sourceTree = "<group>"; };
-		AC2D38A41C1CE1F4000C715A /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = SuperBBmap/Utils/Utils.hpp; sourceTree = "<group>"; };
 		AC2D38A61C1CEE99000C715A /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Config.cpp; path = SuperBBmap/Config.cpp; sourceTree = "<group>"; };
 		AC2D38A71C1CEE99000C715A /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Config.hpp; path = SuperBBmap/Config.hpp; sourceTree = "<group>"; };
 		AC30D3C31C0CD77F00F48FB9 /* SuperBBmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SuperBBmap; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +51,8 @@
 		AC4996611C1DEE5700575DD5 /* CorrectAlignment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CorrectAlignment.hpp; path = Models/CorrectAlignment.hpp; sourceTree = "<group>"; };
 		AC4996631C1DEFB400575DD5 /* Alignment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Alignment.cpp; path = Models/Alignment.cpp; sourceTree = "<group>"; };
 		AC4996641C1DEFB400575DD5 /* Alignment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Alignment.hpp; path = Models/Alignment.hpp; sourceTree = "<group>"; };
+		AC93E3641C5570F30096AC41 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		AC93E3651C5570F30096AC41 /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +95,11 @@
 		AC2D38A21C1CE1C2000C715A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AC2D38A31C1CE1F4000C715A /* Utils.cpp */,
-				AC2D38A41C1CE1F4000C715A /* Utils.hpp */,
+				AC93E3641C5570F30096AC41 /* Utils.cpp */,
+				AC93E3651C5570F30096AC41 /* Utils.hpp */,
 			);
 			name = Utils;
+			path = SuperBBmap/Utils;
 			sourceTree = "<group>";
 		};
 		AC30D3BA1C0CD77F00F48FB9 = {
@@ -216,8 +217,8 @@
 				AC2D38A11C1CBD53000C715A /* GenomeIndexer.cpp in Sources */,
 				AC30D3C71C0CD77F00F48FB9 /* main.cpp in Sources */,
 				AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */,
+				AC93E3661C5570F30096AC41 /* Utils.cpp in Sources */,
 				AC2D38A81C1CEE99000C715A /* Config.cpp in Sources */,
-				AC2D38A51C1CE1F4000C715A /* Utils.cpp in Sources */,
 				AC49965C1C1DEC1400575DD5 /* GenomeIndex.cpp in Sources */,
 				AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */,
 				AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */,

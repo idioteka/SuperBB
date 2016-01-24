@@ -26,7 +26,13 @@ public:
         correctAlignment = _correctAlignment;
     }
     ~Read() {
+        delete correctAlignment;
     }
+    string reverseComplement();
+    vector<int> readKeys();
+private:
+    vector<long> makeKeyIndexes();
+    long getDesiredKeyNumber();
 };
 
 #endif /* Read_hpp */

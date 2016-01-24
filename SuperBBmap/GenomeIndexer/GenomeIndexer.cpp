@@ -207,18 +207,3 @@ void* GenomeIndexer::fillSites(void *threadid) {
     }
     pthread_exit(NULL);
 }
-
-int GenomeIndexer::keyFromKmer(string *wholeGenome, long start, long stop) {
-    int key = 0;
-    for(long i = start; i < stop; i++) {
-        char base = (*wholeGenome)[i];
-        int code = baseToCode(base);
-        if(code < 0) {
-            return -1;
-        }
-        key = ((key<<2) | code);
-    }
-    return key;
-}
-
-

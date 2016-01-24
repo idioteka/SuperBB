@@ -30,5 +30,7 @@ vector<string> split(const string &s, char delim);
 
 string matchStringToCigarString(string matchString);
 string cigarStringToMatchString(string cigarString);
-    
+
+int keyFromKmer(string *genome, long start, long stop);
+
 #endif /* Utils_hpp */
