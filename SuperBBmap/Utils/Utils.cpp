@@ -92,3 +92,13 @@ int keyFromKmer(string *genome, long start, long stop) {
     }
     return key;
 }
+
+int reverseComplementBinary(int key, long keylen) {
+    int out = 0;
+    key =~ key;
+    for(int i = 0; i < keylen; i++){
+        out = ((out<<2) | (key&3));
+        key >>= 2;
+    }
+    return out;
+}

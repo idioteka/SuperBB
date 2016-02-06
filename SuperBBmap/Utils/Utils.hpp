@@ -33,4 +33,6 @@ string cigarStringToMatchString(string cigarString);
 
 int keyFromKmer(string *genome, long start, long stop);
 
+int reverseComplementBinary(int kmer, long keylen);
+
 #endif /* Utils_hpp */

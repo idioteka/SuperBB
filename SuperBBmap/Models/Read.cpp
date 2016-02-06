@@ -27,18 +27,6 @@ string Read::reverseComplement() {
     return complement;
 }
 
-vector<int> Read::createReadKeys() {
-    vector<int> keys;
-    vector<long> keyIndexes = makeKeyIndexes();
-    for(unsigned long i = 0; i < keyIndexes.size(); i++) {
-        long keyIndex = keyIndexes[i];
-        long keylen = Config::instance()->keylen;
-        int key = keyFromKmer(&content, keyIndex, keyIndex+keylen);
-        keys.push_back(key);
-    }
-    return  keys;
-}
-
 vector<long> Read::makeKeyIndexes() {
     vector<long> keyIndexes;
     Config* config = Config::instance();
@@ -59,6 +47,17 @@ vector<long> Read::makeKeyIndexes() {
     return keyIndexes;
 }
 
+vector<int> Read::createReadKeys() {
+    vector<int> keys;
+    vector<long> keyIndexes = makeKeyIndexes();
+    for(unsigned long i = 0; i < keyIndexes.size(); i++) {
+        long keyIndex = keyIndexes[i];
+        long keylen = Config::instance()->keylen;
+        int key = keyFromKmer(&content, keyIndex, keyIndex+keylen);
+        keys.push_back(key);
+    }
+    return  keys;
+}
 
 long Read::getDesiredKeyNumber() {
     Config* config = Config::instance();
@@ -73,5 +72,32 @@ long Read::getDesiredKeyNumber() {
     desiredKeyNumber = max(config->minDesiredKeysNumber, desiredKeyNumber);
     desiredKeyNumber = min(slots, desiredKeyNumber);
     return desiredKeyNumber;
+}
+
+vector<long> Read::reverseComplementKeyIndexes() {
+    long readlen = content.size();
+    long keylen = Config::instance()->keylen;
+    vector<long> keyIndexes = makeKeyIndexes();
+    vector<long> reversedKeyIndexes;
+    for (long i = keyIndexes.size() - 1; i >= 0; i--) {
+        long keyIndex = keyIndexes[i];
+        long reversedKeyIndex = readlen - (keyIndex + keylen);
+        reversedKeyIndexes.push_back(reversedKeyIndex);
+    }
+    return reversedKeyIndexes;
+}
+
+vector<int> Read::reverseComplementKeys() {
+    long keylen = Config::instance()->keylen;
+    vector<int> reversedKeys;
+    vector<int> keys = createReadKeys();
+    
+    for (long i = keys.size() - 1; i >= 0; i--) {
+        int key = keys[i];
+        int reversedKey = reverseComplementBinary(key, keylen);
+        reversedKeys.push_back(reversedKey);
+    }
+    
+    return reversedKeys;
 }
 
