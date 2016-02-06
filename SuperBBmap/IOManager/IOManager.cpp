@@ -135,7 +135,7 @@ vector<Read*>* IOManager::readReadsFromBBFormat(string filename) {
     string line;
     int br = 0;
     while(getline(ifs, line)) {
-        print(line);
+//        debugPrint(line);
         vector<string> lines = split(line, '\t');
         string name = lines[0];
         long start = atol(lines[1].c_str());

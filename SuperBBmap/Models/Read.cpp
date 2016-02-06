@@ -27,7 +27,7 @@ string Read::reverseComplement() {
     return complement;
 }
 
-vector<int> Read::readKeys() {
+vector<int> Read::createReadKeys() {
     vector<int> keys;
     vector<long> keyIndexes = makeKeyIndexes();
     for(unsigned long i = 0; i < keyIndexes.size(); i++) {
@@ -53,7 +53,6 @@ vector<long> Read::makeKeyIndexes() {
             break;
         }
         keyIndexes.push_back(j);
-        
         readPosition += interval;
         j = min(((long) content.size() - config->keylen), (max(j+1, (long) round(readPosition))));
     }
