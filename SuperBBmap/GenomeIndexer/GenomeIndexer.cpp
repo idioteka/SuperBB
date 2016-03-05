@@ -127,7 +127,7 @@ long* GenomeIndexer::createSites(string* wholeGenome, long* sizes, long sum) {
     SitesCreationThreadData threadDatas[4];
     
     for(int i = 0; i < numberOfThreads; i++) {
-        threadDatas[i] = SitesCreationThreadData(i, sites, sizes, wholeGenome);
+        threadDatas[i] = SitesCreationThreadData(i, sizes, sites, wholeGenome);
     }
     
     for(int i = 0; i < numberOfThreads; i++) {

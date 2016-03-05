@@ -8,6 +8,7 @@
 
 #include "IOManager.hpp"
 #include "GenomeIndexer.hpp"
+#include "SuperBBMapper.hpp"
 
 void testIndex(int argc, const char * argv[]) {
     
@@ -21,7 +22,7 @@ void testIndex(int argc, const char * argv[]) {
     
     delete wholeGenome;
     
-    print(to_string(index->sitesLength));
+//    print(to_string(index->sitesLength));
     
     //    IOManager::writeIndexToFile(index);
     
@@ -80,10 +81,28 @@ void testKeysCreation(int argc, const char * argv[]) {
     }
 }
 
+void testAlgorithm(int argc, const char * argv[]) {
+    string readsFilename = Config::instance()->inRootDir + "in2.bb";
+    vector<Read*>* reads = IOManager::readReadsFromBBFormat(readsFilename);
+    
+    string genomeFilename = Config::instance()->inRootDir + "genome.fa";
+    string* wholeGenome = IOManager::extractGenomeFromFile(genomeFilename);
+    
+//    GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
+    GenomeIndex* index = IOManager::readIndexFromFile();
+//    IOManager::writeIndexToFile(index);
+    
+    for (int i = 0; i < 1; i++) {
+        Read* read = (*reads)[i];
+        mapRead(read, index, wholeGenome);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    testIndex(argc, argv);
-    testKeysCreation(argc, argv);
+//    testKeysCreation(argc, argv);
+    testAlgorithm(argc, argv);
     
     return 0;
 }

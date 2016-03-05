@@ -13,9 +13,12 @@
 #include "GenomeIndex.hpp"
 #include "Read.hpp"
 #include "Alignment.hpp"
+#include "KeyHits.hpp"
 
 using namespace std;
 
-void mapRead(Read* read, GenomeIndex* index);
-void mapReadOneStrand(Read* read, string readContent, vector<long> keyIndexes, vector<int> keys, bool strand);
+void mapRead(Read* read, GenomeIndex* index, string* wholeGenome);
+void mapReadOneStrand(Read* read, string readContent, vector<long> keyIndexes, vector<int> keys, bool strand, GenomeIndex* index, string* wholeGenome);
+long countHitsForKey(int key, GenomeIndex* index);
+vector<KeyHits*>* getKeyHitsForKeys(vector<int> keys, GenomeIndex* index);
 #endif /* SuperBBMapper_hpp */
