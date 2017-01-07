@@ -29,9 +29,9 @@ public:
         delete correctAlignment;
     }
     string reverseComplement();
-    vector<long> makeKeyIndexes();
+    vector<long> makeKeyOffsites();
     vector<int> createReadKeys();
-    vector<long> reverseComplementKeyIndexes();
+    vector<long> reverseComplementKeyOffsites();
     vector<int> reverseComplementKeys();
 private:
     long getDesiredKeyNumber();

@@ -18,7 +18,8 @@
 		AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC4996631C1DEFB400575DD5 /* Alignment.cpp */; };
 		AC8D7A2F1C66B5000022C250 /* SuperBBMapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8D7A2D1C66B5000022C250 /* SuperBBMapper.cpp */; };
 		AC93E3661C5570F30096AC41 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC93E3641C5570F30096AC41 /* Utils.cpp */; };
-		ACEAF3E81C8B23B5000AB137 /* KeyHits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACEAF3E61C8B23B5000AB137 /* KeyHits.cpp */; };
+		ACCFE6E01E215D3300515C47 /* KeyHit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACCFE6DE1E215D3300515C47 /* KeyHit.cpp */; };
+		ACEAF3E81C8B23B5000AB137 /* KeyHitsCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACEAF3E61C8B23B5000AB137 /* KeyHitsCollection.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,8 +58,10 @@
 		AC8D7A2E1C66B5000022C250 /* SuperBBMapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SuperBBMapper.hpp; sourceTree = "<group>"; };
 		AC93E3641C5570F30096AC41 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		AC93E3651C5570F30096AC41 /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
-		ACEAF3E61C8B23B5000AB137 /* KeyHits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KeyHits.cpp; path = Models/KeyHits.cpp; sourceTree = "<group>"; };
-		ACEAF3E71C8B23B5000AB137 /* KeyHits.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = KeyHits.hpp; path = Models/KeyHits.hpp; sourceTree = "<group>"; };
+		ACCFE6DE1E215D3300515C47 /* KeyHit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KeyHit.cpp; path = Models/KeyHit.cpp; sourceTree = "<group>"; };
+		ACCFE6DF1E215D3300515C47 /* KeyHit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = KeyHit.hpp; path = Models/KeyHit.hpp; sourceTree = "<group>"; };
+		ACEAF3E61C8B23B5000AB137 /* KeyHitsCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KeyHitsCollection.cpp; path = Models/KeyHitsCollection.cpp; sourceTree = "<group>"; };
+		ACEAF3E71C8B23B5000AB137 /* KeyHitsCollection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = KeyHitsCollection.hpp; path = Models/KeyHitsCollection.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +158,10 @@
 				AC4996641C1DEFB400575DD5 /* Alignment.hpp */,
 				AC0140881C2DE5D40010D0E3 /* Heap.cpp */,
 				AC0140891C2DE5D40010D0E3 /* Heap.hpp */,
-				ACEAF3E61C8B23B5000AB137 /* KeyHits.cpp */,
-				ACEAF3E71C8B23B5000AB137 /* KeyHits.hpp */,
+				ACEAF3E61C8B23B5000AB137 /* KeyHitsCollection.cpp */,
+				ACEAF3E71C8B23B5000AB137 /* KeyHitsCollection.hpp */,
+				ACCFE6DE1E215D3300515C47 /* KeyHit.cpp */,
+				ACCFE6DF1E215D3300515C47 /* KeyHit.hpp */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -194,7 +199,7 @@
 		AC30D3BB1C0CD77F00F48FB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Josip Maric";
 				TargetAttributes = {
 					AC30D3C21C0CD77F00F48FB9 = {
@@ -229,9 +234,10 @@
 				AC8D7A2F1C66B5000022C250 /* SuperBBMapper.cpp in Sources */,
 				AC2D389C1C1C6810000C715A /* IOManager.cpp in Sources */,
 				AC93E3661C5570F30096AC41 /* Utils.cpp in Sources */,
-				ACEAF3E81C8B23B5000AB137 /* KeyHits.cpp in Sources */,
+				ACEAF3E81C8B23B5000AB137 /* KeyHitsCollection.cpp in Sources */,
 				AC2D38A81C1CEE99000C715A /* Config.cpp in Sources */,
 				AC49965C1C1DEC1400575DD5 /* GenomeIndex.cpp in Sources */,
+				ACCFE6E01E215D3300515C47 /* KeyHit.cpp in Sources */,
 				AC4996651C1DEFB400575DD5 /* Alignment.cpp in Sources */,
 				AC4996621C1DEE5700575DD5 /* CorrectAlignment.cpp in Sources */,
 				AC49965F1C1DEC9500575DD5 /* Read.cpp in Sources */,
@@ -255,8 +261,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -298,8 +306,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";

@@ -12,19 +12,19 @@
 
 void testIndex(int argc, const char * argv[]) {
     
-    string genomeFilename = Config::instance()->inRootDir + "test_genome.fa";
+    string genomeFilename = Config::instance()->inRootDir + "genome.fa";
     string* wholeGenome = IOManager::extractGenomeFromFile(genomeFilename);
     //    print(*wholeGenome);
     
-    //    GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
+        GenomeIndex* index = GenomeIndexer::createIndex(wholeGenome);
     
-    GenomeIndex* index = IOManager::readIndexFromFile();
+//    GenomeIndex* index = IOManager::readIndexFromFile();
     
     delete wholeGenome;
     
 //    print(to_string(index->sitesLength));
     
-    //    IOManager::writeIndexToFile(index);
+        IOManager::writeIndexToFile(index);
     
     delete index;
 }
@@ -68,7 +68,7 @@ void testKeysCreation(int argc, const char * argv[]) {
     string readsFilename = Config::instance()->inRootDir + "test_reads.bb";
     vector<Read*>* reads = IOManager::readReadsFromBBFormat(readsFilename);
     for (int i = 0; i < reads->size(); i++) {
-        vector<long> indexes = (*reads)[i]->makeKeyIndexes();
+        vector<long> indexes = (*reads)[i]->makeKeyOffsites();
         vector<int> keys = (*reads)[i]->createReadKeys();
         vector<int> keysCorrect = keysCorrectMap[i];
         vector<long> indexesCorrect = indexesCorrectMap[i];
@@ -92,8 +92,10 @@ void testAlgorithm(int argc, const char * argv[]) {
     GenomeIndex* index = IOManager::readIndexFromFile();
 //    IOManager::writeIndexToFile(index);
     
+    print("Number of reads: " + to_string(reads->size()));
     for (int i = 0; i < 1; i++) {
         Read* read = (*reads)[i];
+//        print(read->content);
         mapRead(read, index, wholeGenome);
     }
 }
@@ -103,6 +105,6 @@ int main(int argc, const char * argv[]) {
 //    testIndex(argc, argv);
 //    testKeysCreation(argc, argv);
     testAlgorithm(argc, argv);
-    
+
     return 0;
 }

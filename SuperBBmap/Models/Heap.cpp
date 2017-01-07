@@ -12,10 +12,10 @@ Heap::Heap() {
     size_ = 0;
 }
 
-int Heap::compare(Triplet &t1, Triplet &t2) {
-    int x = t1.site - t2.site;
-    if(x != 0) return x;
-    return t1.column - t2.column;
+int Heap::compare(KeyHit &t1, KeyHit &t2) {
+    long siteDifference = t1.keyHitSite() - t2.keyHitSite();
+    if(siteDifference != 0) return (int) siteDifference;
+    return t1.keyOrderNumber - t2.keyOrderNumber;
 }
 
 void Heap::percDown(int loc){
@@ -25,8 +25,8 @@ void Heap::percDown(int loc){
     }
     
     int next = loc/2;
-    Triplet a = array[loc];
-    Triplet b = array[next];
+    KeyHit a = array[loc];
+    KeyHit b = array[next];
     
     while(loc > 1 && compare(a, b) < 0){
         array[loc] = b;
@@ -44,8 +44,8 @@ void Heap::percUp(int loc){
     if(next1 > size_) {
         return;
     }
-    Triplet a = array[loc];
-    Triplet b = array[next1];
+    KeyHit a = array[loc];
+    KeyHit b = array[next1];
     if(next2 > size_) {
         if(compare(a, b) > 0){
             array[next1] = a;
@@ -54,7 +54,7 @@ void Heap::percUp(int loc){
         }
     }
     else {
-        Triplet c = array[next2];
+        KeyHit c = array[next2];
         if(compare(b, c) < 1) {
             if(compare(a, b) > 0){
                 array[next1] = a;
@@ -74,29 +74,28 @@ void Heap::percUp(int loc){
 
 void Heap::initHeap(int max_size) {
     CAPACITY = max_size;
-    Triplet t;
+    KeyHit t;
     array.clear();
     array.push_back(t);
-    
 }
 
-void Heap::add(Triplet &t) {
+void Heap::add(KeyHit &t) {
     size_++;
     array.push_back(t);
     percDown(size_);
 }
 
-Triplet Heap::peek() {
+KeyHit Heap::peek() {
     if(size_ == 0) {
         return array[0];
     }
     return array[1];
 }
-Triplet Heap::poll(){
+KeyHit Heap::poll(){
     if(size_ == 0) {
         return array[0];
     }
-    Triplet t = array[1];
+    KeyHit t = array[1];
     array[1] = array[size_];
     array.erase(array.begin()+size_);
     size_--;

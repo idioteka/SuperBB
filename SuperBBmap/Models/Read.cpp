@@ -27,8 +27,8 @@ string Read::reverseComplement() {
     return complement;
 }
 
-vector<long> Read::makeKeyIndexes() {
-    vector<long> keyIndexes;
+vector<long> Read::makeKeyOffsites() {
+    vector<long> keyOffsites;
     Config* config = Config::instance();
     
     long desiredKeysNumber = getDesiredKeyNumber();
@@ -40,16 +40,16 @@ vector<long> Read::makeKeyIndexes() {
         if(((unsigned long) round(readPosition+interval)) > content.size()) {
             break;
         }
-        keyIndexes.push_back(j);
+        keyOffsites.push_back(j);
         readPosition += interval;
         j = min(((long) content.size() - config->keylen), (max(j+1, (long) round(readPosition))));
     }
-    return keyIndexes;
+    return keyOffsites;
 }
 
 vector<int> Read::createReadKeys() {
     vector<int> keys;
-    vector<long> keyIndexes = makeKeyIndexes();
+    vector<long> keyIndexes = makeKeyOffsites();
     for(unsigned long i = 0; i < keyIndexes.size(); i++) {
         long keyIndex = keyIndexes[i];
         long keylen = Config::instance()->keylen;
@@ -74,17 +74,17 @@ long Read::getDesiredKeyNumber() {
     return desiredKeyNumber;
 }
 
-vector<long> Read::reverseComplementKeyIndexes() {
+vector<long> Read::reverseComplementKeyOffsites() {
     long readlen = content.size();
     long keylen = Config::instance()->keylen;
-    vector<long> keyIndexes = makeKeyIndexes();
-    vector<long> reversedKeyIndexes;
-    for (long i = keyIndexes.size() - 1; i >= 0; i--) {
-        long keyIndex = keyIndexes[i];
-        long reversedKeyIndex = readlen - (keyIndex + keylen);
-        reversedKeyIndexes.push_back(reversedKeyIndex);
+    vector<long> keyOffsites = makeKeyOffsites();
+    vector<long> reversedKeyOffsites;
+    for (long i = keyOffsites.size() - 1; i >= 0; i--) {
+        long keyOffsite = keyOffsites[i];
+        long reversedKeyOffsite = readlen - (keyOffsite + keylen);
+        reversedKeyOffsites.push_back(reversedKeyOffsite);
     }
-    return reversedKeyIndexes;
+    return reversedKeyOffsites;
 }
 
 vector<int> Read::reverseComplementKeys() {
